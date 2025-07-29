@@ -97,11 +97,52 @@
 
 
 
+'use client';
+
+import { Box, Card, CardContent, Typography, Button, Stack } from '@mui/material';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+
 export default function Home() {
   return (
-    <main>
-      <h1>首页</h1>
-      <p>这里是首页内容</p>
-    </main>
+    <Box
+      minHeight="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bgcolor="background.default"
+      sx={{ transition: 'background 0.3s' }}
+    >
+      <Card sx={{
+        minWidth: 420,
+        maxWidth: 540,
+        mx: 2,
+        p: 3,
+        borderRadius: 4,
+        boxShadow: 8,
+        bgcolor: 'background.paper'
+      }}>
+        <CardContent>
+          <Stack spacing={3} alignItems="center">
+            <DashboardIcon color="primary" sx={{ fontSize: 64 }} />
+            <Typography variant="h4" fontWeight={700} textAlign="center">
+              KubeEdge Dashboard
+            </Typography>
+            <Typography variant="h6" color="text.secondary" textAlign="center">
+              智能边缘计算管理平台
+              <br />
+              轻松管理集群，监控设备状态，快速运维
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              href="/dashboard"
+              sx={{ mt: 2, px: 4 }}
+            >
+              立即开始
+            </Button>
+          </Stack>
+        </CardContent>
+      </Card>
+    </Box>
   );
 }
